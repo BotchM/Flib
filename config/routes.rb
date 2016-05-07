@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  root 'flips#home'
+  get 'users/new'
 
-  get 'flips/signin'
-
-  get 'flips/signup'
+  root                 'flips#home'
+  get  'signin'     => 'flips#signin'
+  get  'signup'     => 'users#new'
 
 end

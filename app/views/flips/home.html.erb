@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<% provide(:title, "Home") %>
+<% provide(:title, "") %>
 <html>
 <head>
 
@@ -18,7 +18,7 @@
 <!--Webpage top bar and logo-->
 <div class="hero-nav">
     <div class="hero-nav__inner">
-      <h1><a class="home" href="./index.html">Flip</a></h1>
+      <h1><%= link_to "Flip", root_path , class: "Home"%></h1>
     </div>
 </div>
 <!--Webpage top bar and logo end-->
@@ -91,8 +91,8 @@
     <header id="headSign">
       <nav id="navSign">
         <ul>
-          <li><a href="./signin.html">Sign in</a></li>
-          <li><a href="./signup.html">Sign up</a>
+          <li><%= link_to "Sign in",  signin_path %></li>
+          <li><%= link_to "Sign up",  signup_path %></li>
         </ul>
       </nav>
     </header>
@@ -102,10 +102,10 @@
 
 <!--Bottom Navigation bar-->
 <ul class="nav" id="menu">
-  <li class="active"><a href="#home" class="current">Home</a></li>
-  <li><a href="#offers" >Post</a></li>
-  <li><a href="#account" >Account</a></li>
-  <li><a href="#info" >Info</a></li>
+  <li><%= link_to "Flip", root_path , class: "Home"%></li>
+  <li><%= link_to "Post",   '#' %></li>
+  <li><%= link_to "Account",   '#' %></li>
+  <li><%= link_to "Info",   '#' %></li>
 </ul>
 <!--Bottom Navigation bar end-->
 
