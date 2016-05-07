@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!--Title-->
+  <title>
+    Flip
+  </title>
+
+</head>
+
+
+<!--Start of body-->
+<body>
+
+
+<!--Webpage top bar and logo-->
+<div class="hero-nav">
+    <div class="hero-nav__inner">
+      <h1><a class="home" href="./index.html">Flip</a></h1>
+    </div>
+</div>
+<!--Webpage top bar and logo end-->
+
+
+
+<!--Navigation bar-->
+<nav class="man">
+
+  <!--School nav bar section-->
+  <ul class="dropdown">
+    <li class="drop"><a id="school" href="#">School</a>
+     <ul class="sub_menu" id="schools">
+        <li id="SFU" value="SFU"><a href="#">Simon Fraser University</a></li>
+        <li id="UBC" value="UBC"><a href="#">University Of British Columbia</a></li>
+     </ul>
+    </li>
+  </ul>
+  <!--School nav bar section end-->
+
+  <!--Faculty nav bar section-->
+  <ul class="dropdown">
+    <li class="drop"><a id="faculty" href="#">Faculty</a>
+      <ul class="sub_menu" id="faculties">
+        <li id="ACMA" value="ACMA"><a href="#">ACMA Actuarial Mathematics</a></li>
+      </ul>
+     </li>
+  </ul>
+  <!--Faculty nav bar section end-->
+
+  <!--Course nav bar section-->
+  <ul class="dropdown">
+    <li class="drop"><a id="course" href="#">Course</a>
+     <ul class="sub_menu" id="courses">
+        <!--<li value=""><a href="#"></a></li>   Populate the list according to the department using javascript/ruby-->
+     </ul>
+    </li>
+  </ul>
+  <!--Course nav bar section end-->
+
+</nav>
+<!--Navigation bar end-->
+
+
+<!-- Content-->
+<div id="contentBoxApp" ng-app="contentBoxApp">
+  <div id="GridCtrl" ng-controller="GridCtrl">
+    <div class="container dynamic-grid">
+      <article class="grid-item content-box" ng-repeat="(gridKey, gridItem) in gridItems | filter:filterBySearch">
+        <div class="inner">
+        <img class="content-box-thumb"src="{{ gridItem.img }}" alt="tech image" />
+        <h1 class="content-box-header">
+          {{ gridItem.headerText }}
+        </h1>
+        <p class="content-box-blurb">
+          {{ gridItem.blurbText }}
+        </p>
+        <a class="readmore-link" href="#" ng-click="toggleBlurb($event)">read more</a>
+        </div>
+      </article><!-- /.content-box -->
+
+    </div><!-- /.dynamic-grid -->
+  </div><!-- /#GridCtrl -->
+</div><!-- /#contentBoxApp -->
+<!--Content end -->
+<!--  -->
+
+<!--sign/sign in/up-->
+ <div class="wrapperSign">
+    <header id="headSign">
+      <nav id="navSign">
+        <ul>
+          <li><a href="./signin.html">Sign in</a></li>
+          <li><a href="./signup.html">Sign up</a>
+        </ul>
+      </nav>
+    </header>
+  </div>
+<!--sign/sign in/up end-->
+
+
+<!--Bottom Navigation bar-->
+<ul class="nav" id="menu">
+  <li class="active"><a href="#home" class="current">Home</a></li>
+  <li><a href="#offers" >Post</a></li>
+  <li><a href="#account" >Account</a></li>
+  <li><a href="#info" >Info</a></li>
+</ul>
+<!--Bottom Navigation bar end-->
+
+</body>
+<!--End of body-->
+
+</html>
