@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  root 'flips#home'
+
+  get 'flips/signin'
+
+  get 'flips/signup'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
