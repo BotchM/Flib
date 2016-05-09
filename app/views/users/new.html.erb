@@ -4,31 +4,42 @@
   <%= title(yield(:title)) %>
 </title>
 
-<link type="text/css" rel="stylesheet" href="css/sign_in_up.css"/>
 
-<form>
-  <input id="input-1" type="text" placeholder="John Doe" required autofocus />
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages' %>
+
+  <%= f.text_field :name, autofocus: true, id: "input-1", placeholder: "Mahmoud Shehata", class: 'form-control'%>
   <label for="input-1">
-    <span class="label-text">Full Name</span>
+    <%= f.label :fullname, class: 'label-text' %>
     <span class="nav-dot"></span>
     <div class="signin_up-button-trigger">Sign Up</div>
   </label>
-  <input id="input-2" type="email" placeholder="email@address.com" required />
+
+  <%= f.email_field :email, autofocus: true, id: "input-2", placeholder: "email@address.com", class: 'form-control'%>
   <label for="input-2">
-    <span class="label-text">Email</span>
+    <%= f.label :email, class: 'label-text' %>
     <span class="nav-dot"></span>
   </label>
-  <input id="input-3" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" required />
+
+  <%= f.text_field :username, autofocus: true, id: "input-3", placeholder: "username", class: 'form-control'%>
   <label for="input-3">
-    <span class="label-text">Password</span>
+    <%= f.label :username, class: 'label-text' %>
     <span class="nav-dot"></span>
   </label>
-  <input id="input-4" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" required />
+
+  <%= f.password_field :password, autofocus: true, id: "input-4", placeholder: "Password", required: true, class: 'form-control'%>
   <label for="input-4">
-    <span class="label-text">Confirm Password</span>
+    <%f.label :password, class: 'label-text' %>
     <span class="nav-dot"></span>
   </label>
-  <button type="submit">Create Your Account</button>
+
+  <%= f.password_field :password_confirmation, autofocus: true, id: "input-5", placeholder: "Password", required: true, class: 'form-control'%>
+  <label for="input-5">
+    <%= f.label :password_confirmation, "Confirmation", class: 'label-text' %>
+    <span class="nav-dot"></span>
+  </label>
+
+  <%= f.submit "Create my account", class: "btn btn-primary" %>
   <p class="tip">Press Tab</p>
   <div class="signin_up-button">Sign Up</div>
-</form>
+<% end %>

@@ -13,6 +13,7 @@ button {
   transition: all 0.5s cubic-bezier(0.4, 0.25, 0.8, 0.3);
 }
 
+
 input {
   padding: .25rem 0;
   border: 0;
@@ -184,7 +185,7 @@ input:focus + label .nav-dot:before {
   background-color: #a41212;
 }
 
-label[for="input-1"] .nav-dot {
+label[for="input_1"] .nav-dot {
   margin-top: -125px;
 }
 
