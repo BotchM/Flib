@@ -13,6 +13,7 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'puma',           '3.1.0'
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
