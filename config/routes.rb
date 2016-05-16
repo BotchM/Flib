@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 
   root                   'flips#home'
   get    'signup'     => 'users#new'
-  get    'signin'     => 'sessions#new'
-  post   'signin'     => 'sessions#create'
+  get    'login'      => 'sessions#new'
+  post   'login'      => 'sessions#create'
   delete 'logout'     => 'sessions#destroy'
   #Resources
   resources :users

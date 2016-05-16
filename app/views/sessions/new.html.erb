@@ -1,0 +1,25 @@
+<% provide(:title, "Sign in") %>
+<!--Title-->
+<title>
+  <%= title(yield(:title)) %>
+</title>
+
+<%= form_for(:session, url: login_path) do |f| %>
+
+
+  <%= f.email_field :email, id: "input_1", autofocus: true, placeholder: "email@address.com", class: 'form-control'%>
+  <label for="input_1">
+    <%= f.label :email, class: 'label-text' %>
+    <span class="nav-dot"></span>
+  </label>
+
+  <%= f.password_field :password, id: "input_2", placeholder: "Password", required: true, class: 'form-control'%>
+  <label for="input_2">
+    <%f.label :password, class: 'label-text' %>
+    <span class="nav-dot"></span>
+  </label>
+
+  <%= f.submit "Create my account", class: "btn btn-primary" %>
+  <p class="tip">Press Tab</p>
+
+<% end %>
