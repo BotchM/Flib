@@ -1,0 +1,42 @@
+<% provide(:title, "Edit Profile") %>
+<!--Title-->
+<title>
+  <%= title(yield(:title)) %>
+</title>
+
+
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages' %>
+
+  <%= f.text_field :name, autofocus: true, id: "input-1", placeholder: "Mahmoud Shehata", class: 'form-control'%>
+  <label for="input-1">
+    <%= f.label :fullname, class: 'label-text' %>
+    <span class="nav-dot"></span>
+  </label>
+
+  <%= f.email_field :email, id: "input-2", placeholder: "email@address.com", class: 'form-control'%>
+  <label for="input-2">
+    <%= f.label :email, class: 'label-text' %>
+    <span class="nav-dot"></span>
+  </label>
+
+  <%= f.text_field :username, id: "input-3", placeholder: "username", class: 'form-control'%>
+  <label for="input-3">
+    <%= f.label :username, class: 'label-text' %>
+    <span class="nav-dot"></span>
+  </label>
+
+  <%= f.password_field :password, id: "input-4", placeholder: "Password", required: true, class: 'form-control'%>
+  <label for="input-4">
+    <%f.label :password, class: 'label-text' %>
+    <span class="nav-dot"></span>
+  </label>
+
+  <%= f.password_field :password_confirmation, id: "input-5", placeholder: "Password", required: true, class: 'form-control'%>
+  <label for="input-5">
+    <%= f.label :password_confirmation, "Confirmation", class: 'label-text' %>
+    <span class="nav-dot"></span>
+  </label>
+
+  <%= f.submit "Save changes", class: "btn btn-primary" %>
+<% end %>
